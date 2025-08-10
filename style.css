@@ -1,0 +1,184 @@
+:root {
+    --primary: #6c5ce7;
+    --secondary: #0984e3;
+    --accent: #fd79a8;
+    --light: #f8f9fa;
+    --dark: #2d3436;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(-45deg, #6c5ce7, #0984e3, #00cec9, #00b894);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: var(--light);
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    max-width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+h1 {
+    margin-top: 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#display {
+    font-size: 3.5em;
+    font-family: 'Courier New', monospace;
+    margin: 25px 0;
+    font-weight: bold;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.buttons button {
+    font-size: 1em;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.buttons button:active {
+    transform: translateY(0);
+}
+
+.buttons button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+#startStopBtn {
+    background-color: white;
+    color: var(--primary);
+}
+
+#lapBtn {
+    background-color: var(--accent);
+    color: white;
+}
+
+#resetBtn {
+    background-color: var(--dark);
+    color: white;
+}
+
+#laps-container {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+}
+
+#laps {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+#laps li {
+    padding: 10px 15px;
+    margin: 8px 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+#laps li:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(5px);
+}
+
+.lap-number {
+    font-weight: bold;
+}
+
+.lap-time {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+.fastest {
+    background: rgba(46, 213, 115, 0.3) !important;
+    border-left: 4px solid #2ed573;
+}
+
+.slowest {
+    background: rgba(255, 71, 87, 0.3) !important;
+    border-left: 4px solid #ff4757;
+}
+
+/* Custom scrollbar */
+#laps-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#laps-container::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+
+#laps-container::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+#laps-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.5);
+}
+
+/* Pulsing animation when running */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.running {
+    animation: pulse 1.5s infinite;
+}
