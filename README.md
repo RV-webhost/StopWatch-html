@@ -1,0 +1,1 @@
+A Stopwatch web app built with HTML, CSS, and JavaScript. HTML structures the display and controls, CSS creates a clean and responsive design, and JavaScript handles start, pause, reset, and lap features, delivering an accurate and user-friendly time tracking tool.
